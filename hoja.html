@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Resta</title>
+  <script>
+    function calcular() {
+      // Obtener los valores de las casillas de entrada y salida
+      var entradas = document.getElementsByClassName("entrada");
+      var salidas = document.getElementsByClassName("salida");
+      
+      var sumaEntradas = 0;
+      var sumaSalidas = 0;
+      
+      // Calcular la resta de cada par de casillas
+      for (var i = 0; i < entradas.length; i++) {
+        var entrada = parseInt(entradas[i].value);
+        var salida = parseInt(salidas[i].value);
+        
+        // Calcular la resta y actualizar el resultado
+        var resta = entrada - salida;
+        document.getElementsByClassName("resultado")[i].value = resta;
+        
+        // Sumar los valores de entrada y salida
+        sumaEntradas += entrada;
+        sumaSalidas += salida;
+      }
+      
+      // Mostrar la suma de todas las casillas de entrada
+      document.getElementById("colectado").value = sumaEntradas;
+      
+      // Mostrar la suma de todas las casillas de salida
+      document.getElementById("premios").value = sumaSalidas;
+      
+      // Calcular la retención del 5.5% de los premios
+      var retencion = sumaSalidas * 0.055;
+      document.getElementById("retencion").value = retencion;
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora de Resta</h1>
+  
+  <h2>Entrada</h2>
+  <table>
+    <tr>
+      <th>Entrada</th>
+      <th>Salida</th>
+      <th>Resultado</th>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+    <tr>
+      <td><input type="number" class="entrada" value="0"></td>
+      <td><input type="number" class="salida" value="0"></td>
+      <td><input type="number" class="resultado" value="0" readonly></td>
+    </tr>
+  </table>
+  
+  <h2>Resultado</h2>
+  <table>
+    <tr>
+      <th>Colectado</th>
+      <th>Premios</th>
+      <th>Retención</th>
+    </tr>
+    <tr>
+      <td><input type="number" id="colectado" value="0" readonly></td>
+      <td><input type="number" id="premios" value="0" readonly></td>
+      <td><input type="number" id="retencion" value="0" readonly></td>
+    </tr>
+  </table>
+  
+  <button onclick="calcular()">Obtener Resultados</button>
+</body>
+</html>
